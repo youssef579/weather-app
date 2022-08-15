@@ -1,0 +1,117 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #fff;
+}
+
+.messages {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.messages i {
+    margin-right: 16px;
+    font-size: 20px;
+}
+
+.messages p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.messages button {
+    top: 50% !important;
+    transform: translateY(-50%);
+}
+
+header {
+    padding: 7.5vh 0;
+    background-color: #0075ff;
+}
+
+header h1 {
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: min(1.8em, 5vw);
+    font-weight: normal;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 50px 10px;
+}
+
+
+form input {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    width: min(600px, calc(100% - 100px)) !important;
+}
+
+form button {
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, transform 0.15s ease-in-out, margin-left 0.15s !important;    
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+button i {
+    font-size: 1.1em;
+}
+
+form input:focus + button {
+    transform: translateX(4.5px);
+}
+
+form button:focus {
+    margin-left: 4.4px;
+}
+
+main {
+    padding: 0 20px 40px;
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    grid-auto-rows: 130px;
+    justify-content: space-evenly;
+}
+
+.city {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.38);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.city:hover {
+    transform: scale(1.1);
+}
+
+.city * {
+    padding: 0;
+    margin: 0;
+}
+
+.city h2 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.city p {
+    color: rgb(83, 83, 83);
+}
