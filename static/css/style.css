@@ -62,7 +62,7 @@ form input {
 }
 
 form button {
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, transform 0.15s ease-in-out, margin-left 0.15s !important;    
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, transform 0.15s ease-in-out !important;    
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
 }
@@ -72,18 +72,18 @@ button i {
 }
 
 form input:focus + button {
-    transform: translateX(4.5px);
+    transform: translateX(4.2px);
 }
 
 form button:focus {
-    margin-left: 4.4px;
+    transform: translateX(4.1px);
 }
 
 main {
     padding: 0 20px 40px;
     gap: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    grid-template-columns: repeat(auto-fit, 250px);
     grid-auto-rows: 130px;
     justify-content: space-evenly;
 }
@@ -110,6 +110,9 @@ main {
 .city h2 {
     margin-bottom: 10px;
     font-size: 1.3em;
+    width: 146px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .city p {
