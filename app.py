@@ -1,12 +1,12 @@
 # Imports
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect, session
 import secrets, requests
 from flask_sqlalchemy import SQLAlchemy
 
 # Global variables
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cities.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
 API = '9dd5a007254678bd11aee4e1877d4cf2'
 
@@ -21,18 +21,23 @@ def get_weather(name):
         case _:
             city = {
                 'name': name.title(),
-                'c': int(result['main']['temp'] - 273.15),
-                'f': int(result['main']['temp'] * 1.8 - 459.67),
+                'c': round(result['main']['temp'] - 273.15),
+                'f': round(result['main']['temp'] * 1.8 - 459.67),
                 'description': result['weather'][0]['description'],
                 'icon': result['weather'][0]['icon']
             }
             return city
 
 # Database
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False, unique=True)
+    password = db.Column(db.String(50), nullable=False)
+    
 class City(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=True)
-
+    
 # Main route
 @app.route('/', methods=["GET", "POST"])
 def index():
