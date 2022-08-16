@@ -1,5 +1,5 @@
 # Imports
-from flask import Flask, render_template, request, flash, session
+from flask import Flask, render_template, request, flash, session, redirect
 import secrets, requests
 from flask_session import Session
 
@@ -28,6 +28,11 @@ def get_weather(name):
                 'icon': result['weather'][0]['icon']
             }
     
+    
+@app.route('/<path:path>')
+def redirecting(path):
+    return redirect('/')
+
 # Main route
 @app.route('/', methods=["GET", "POST"])
 def index():
