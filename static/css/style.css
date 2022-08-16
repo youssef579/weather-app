@@ -34,6 +34,8 @@ body {
     top: 50% !important;
     transform: translateY(-50%);
     box-shadow: none !important;
+    padding: 0 !important;
+    right: 20px !important;
 }
 
 header {

@@ -28,7 +28,6 @@ def get_weather(name):
                 'icon': result['weather'][0]['icon']
             }
     
-    
 @app.route('/<path:path>')
 def redirecting(path):
     return redirect('/')
