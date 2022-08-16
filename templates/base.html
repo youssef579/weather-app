@@ -30,7 +30,22 @@
 </head>
 
 <body>
+    {% for msg in get_flashed_messages(category_filter=["warning"]) %}
+        <div class="alert alert-warning alert-dismissible fade show messages" role="alert">
+            <p><i class="bi bi-info-circle"></i></i> {{  msg  }}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    {% for msg in get_flashed_messages(category_filter=["error"]) %}
+        <div class="alert alert-danger alert-dismissible fade show messages" role="alert">
+            <p><i class="bi bi-exclamation-triangle"></i> {{  msg  }}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
     {% block body %}{% endblock %}
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>

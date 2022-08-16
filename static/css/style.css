@@ -33,6 +33,7 @@ body {
 .messages button {
     top: 50% !important;
     transform: translateY(-50%);
+    box-shadow: none !important;
 }
 
 header {
@@ -67,8 +68,9 @@ form button {
     border-bottom-left-radius: 0 !important;
 }
 
-button i {
-    font-size: 1.1em;
+button i::before {
+    font-size: 1.2em;
+    transform: translateY(1px);
 }
 
 form input:focus + button {

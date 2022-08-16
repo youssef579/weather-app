@@ -5,20 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    {% for msg in get_flashed_messages(category_filter=["warning"]) %}
-        <div class="alert alert-warning alert-dismissible fade show messages" role="alert">
-            <p><i class="bi bi-info-circle"></i></i> {{  msg  }}</p>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    {% endfor %}
-
-    {% for msg in get_flashed_messages(category_filter=["error"]) %}
-        <div class="alert alert-danger alert-dismissible fade show messages" role="alert">
-            <p><i class="bi bi-exclamation-triangle"></i> {{  msg  }}</p>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    {% endfor %}
-
     <header>
         <h1>Explore the weather around the world</h1>
     </header>
